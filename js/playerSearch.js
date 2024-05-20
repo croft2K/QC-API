@@ -32,7 +32,7 @@ document.getElementById('autocompleteInput').addEventListener('input', function(
                         suggestionItem.addEventListener('click', function() {
                             document.getElementById('autocompleteInput').value = this.innerHTML;
                             autocompleteList.innerHTML = '';
-                            fetchPlayerStats(this.innerHTML);
+                            fetchAndDisplayPlayerStats(this.innerHTML);
                         });
 
                         autocompleteList.appendChild(suggestionItem);
