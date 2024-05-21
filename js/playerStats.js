@@ -49,13 +49,5 @@ function redirectToNewPage(htmlContent) {
     window.location.href = url;
 }
 
-// Handle Enter key press to fetch player stats
-document.getElementById('autocompleteInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        let playerName = this.value;
-        if (playerName) {
-            fetchAndDisplayPlayerStats(playerName);
-        }
-    }
-});
+
 

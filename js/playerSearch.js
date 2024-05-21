@@ -35,6 +35,16 @@ document.getElementById('autocompleteInput').addEventListener('input', function(
                             fetchAndDisplayPlayerStats(this.innerHTML);
                         });
 
+                        // Handle Enter key press to fetch player stats
+                        document.getElementById('autocompleteInput').addEventListener('keydown', function(event) {
+                            if (event.key === 'Enter') {
+                                let playerName = this.value;
+                                if (playerName) {
+                                    fetchAndDisplayPlayerStats(playerName);
+                                }
+                            }
+                        });
+
                         autocompleteList.appendChild(suggestionItem);
                     } else {
                         console.error('Player object does not have a name property:', player);
