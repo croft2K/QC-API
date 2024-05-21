@@ -1,4 +1,6 @@
-# Quake Champions Player Statistics 
+# Quake Champions Player Statistics
+
+https://croft2k.github.io/QC-API/
 
 **A pure learning exercise!** 
 
