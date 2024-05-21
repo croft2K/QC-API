@@ -1,5 +1,6 @@
 document.getElementById('autocompleteInput').addEventListener('input', function() {
     let input = this.value;
+   
     let autocompleteList = document.getElementById('autocomplete-list');
     
     // Clear any existing suggestions
@@ -8,6 +9,7 @@ document.getElementById('autocompleteInput').addEventListener('input', function(
     if (!input) return false;
 
     // Fetch data from the API
+    
     fetch(`https://quake-stats.bethesda.net/api/v2/Player/Search?term=${input}`)
         .then(response => {
             if (!response.ok) {
@@ -25,7 +27,7 @@ document.getElementById('autocompleteInput').addEventListener('input', function(
                     
                     // Check if the player object has the name property
                     if (player && player.entityName) {
-                        let suggestionItem = document.createElement('div');
+                        let suggestionItem = document.createElement('div');                      
                         suggestionItem.innerHTML = player.entityName;
 
                         // Add click event listener to fill the input box and fetch stats
@@ -35,15 +37,14 @@ document.getElementById('autocompleteInput').addEventListener('input', function(
                             fetchAndDisplayPlayerStats(this.innerHTML);
                         });
 
-                        // Handle Enter key press to fetch player stats
+                   /*      // Handle Enter key press to fetch player stats
                         document.getElementById('autocompleteInput').addEventListener('keydown', function(event) {
                             if (event.key === 'Enter') {
-                                let playerName = this.value;
-                                if (playerName) {
-                                    fetchAndDisplayPlayerStats(playerName);
-                                }
+                            let playerName = this.value;
+                            autocompleteList.innerHTML = '';
+                            fetchAndDisplayPlayerStats(playerName);
                             }
-                        });
+                        });  */
 
                         autocompleteList.appendChild(suggestionItem);
                     } else {
