@@ -26,12 +26,10 @@ function generateHTML(playerStatsData) {
     // Extract relevant information from player stats data and generate HTML content
     const playerName = playerStatsData.name;
     const duelRating = playerStatsData.playerRatings.duel.rating;
-    const deaths = playerStatsData.deaths;
     const htmlContent = `
         <h1>Player Stats</h1>
         <h2>Name: ${playerName}</h2>
         <p>Duel Rating: ${duelRating}</p>
-        <p>Deaths: ${deaths}</p>
         <!-- Add more HTML content here as needed -->
     `;
     return htmlContent;
